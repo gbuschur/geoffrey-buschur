@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Geoffrey J. Buschur &mdash; Principal, Aviation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0d1f35;
+  --navy-mid: #1a2d45;
+  --navy-light: #243d5c;
+  --sky: #4a8ab5;
+  --sky-light: #7bb3d4;
+  --sky-pale: #c8dff0;
+  --cream: #f5f0e8;
+  --cream-dark: #e8e0d0;
+  --gold: #c9a84c;
+  --text-dark: #0d1f35;
+  --text-mid: #3a4f66;
+  --text-muted: #6b8299;
+  --white: #ffffff;
+  --serif: 'Cormorant Garamond','Palatino Linotype',Palatino,Georgia,serif;
+  --mono: 'DM Mono','Courier New',Courier,monospace;
+  --sans: 'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--cream);color:var(--text-dark);overflow-x:hidden}
+
+/* HERO */
+.hero{background:var(--navy);min-height:100vh;display:grid;grid-template-rows:auto 1fr auto;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 70% 40%,rgba(74,138,181,.12) 0%,transparent 60%),radial-gradient(ellipse 50% 80% at 10% 80%,rgba(201,168,76,.06) 0%,transparent 50%);pointer-events:none}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(74,138,181,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(74,138,181,.06) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:2rem 3rem;position:relative;z-index:2}
+.nav-logo{font-family:var(--mono);font-size:11px;letter-spacing:.15em;color:var(--sky-light);text-transform:uppercase}
+.nav-badge{font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--gold);border:1px solid rgba(201,168,76,.3);padding:5px 14px;border-radius:2px}
+.hero-content{display:flex;flex-direction:column;justify-content:center;padding:3rem 3rem 2rem;position:relative;z-index:2}
+.hero-eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:.2em;color:var(--gold);text-transform:uppercase;margin-bottom:1.5rem;opacity:0;animation:fadeUp .6s .2s ease forwards}
+.hero-name{font-family:var(--serif);font-size:clamp(52px,8vw,96px);font-weight:300;color:var(--white);line-height:1;letter-spacing:-.01em;margin-bottom:.5rem;opacity:0;animation:fadeUp .7s .35s ease forwards}
+.hero-name em{font-style:italic;color:var(--sky-light)}
+.hero-subtitle{font-family:var(--serif);font-size:clamp(18px,2.5vw,26px);font-weight:300;font-style:italic;color:rgba(200,223,240,.7);margin-bottom:2.5rem;opacity:0;animation:fadeUp .7s .5s ease forwards}
+.hero-prop{max-width:580px;font-size:15px;line-height:1.75;color:rgba(200,223,240,.8);margin-bottom:3rem;padding-left:1.25rem;border-left:2px solid var(--gold);opacity:0;animation:fadeUp .7s .65s ease forwards}
+.hero-prop strong{color:var(--sky-pale);font-weight:600}
+.hero-stats{display:flex;gap:3rem;opacity:0;animation:fadeUp .7s .8s ease forwards;flex-wrap:wrap}
+.stat-item{display:flex;flex-direction:column;gap:4px}
+.stat-number{font-family:var(--serif);font-size:42px;font-weight:300;color:var(--white);line-height:1}
+.stat-number span{color:var(--gold)}
+.stat-label{font-family:var(--mono);font-size:9px;letter-spacing:.15em;color:var(--text-muted);text-transform:uppercase}
+.hero-footer{padding:1.5rem 3rem 2rem;display:flex;align-items:center;justify-content:space-between;position:relative;z-index:2;border-top:1px solid rgba(74,138,181,.15);flex-wrap:wrap;gap:1rem;opacity:0;animation:fadeUp .7s 1s ease forwards}
+.hero-contact{display:flex;gap:2rem;flex-wrap:wrap}
+.contact-item{font-family:var(--mono);font-size:11px;color:var(--sky-light);letter-spacing:.05em}
+.scroll-cue{font-family:var(--mono);font-size:9px;letter-spacing:.15em;color:rgba(74,138,181,.5);text-transform:uppercase;display:flex;align-items:center;gap:8px}
+.scroll-cue::after{content:'';display:block;width:1px;height:40px;background:linear-gradient(to bottom,rgba(74,138,181,.5),transparent)}
+
+/* SECTION SHELL */
+.section{padding:6rem 3rem;max-width:1100px;margin:0 auto}
+.section-label{font-family:var(--mono);font-size:9px;letter-spacing:.2em;color:var(--sky);text-transform:uppercase;margin-bottom:1rem;display:flex;align-items:center;gap:12px}
+.section-label::before{content:'';display:block;width:32px;height:1px;background:var(--sky)}
+.section-heading{font-family:var(--serif);font-size:clamp(32px,4vw,52px);font-weight:300;color:var(--text-dark);line-height:1.1;margin-bottom:3rem}
+.section-heading em{font-style:italic;color:var(--sky)}
+
+/* CASE */
+.case-band{background:var(--navy);padding:5rem 3rem}
+.case-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.case-heading{font-family:var(--serif);font-size:clamp(28px,3.5vw,46px);font-weight:300;color:var(--white);line-height:1.15;margin-bottom:1.5rem}
+.case-heading em{font-style:italic;color:var(--sky-light)}
+.case-body{font-size:15px;line-height:1.8;color:rgba(200,223,240,.75)}
+.case-body+.case-body{margin-top:1rem}
+.case-body strong{color:var(--sky-pale);font-weight:600}
+.gap-cards{display:flex;flex-direction:column;gap:12px}
+.gap-card{background:rgba(255,255,255,.04);border:1px solid rgba(74,138,181,.2);border-radius:4px;padding:1rem 1.25rem}
+.gap-card-title{font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--gold);text-transform:uppercase;margin-bottom:6px}
+.gap-card-body{font-size:13px;line-height:1.6;color:rgba(200,223,240,.65)}
+
+/* EXPERIENCE */
+.exp-list{display:flex;flex-direction:column}
+.exp-item{display:grid;grid-template-columns:180px 1fr;gap:2rem;padding:2.5rem 0;border-top:1px solid var(--cream-dark)}
+.exp-item:last-child{border-bottom:1px solid var(--cream-dark)}
+.exp-dates{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--text-muted);margin-bottom:8px}
+.exp-co{font-size:13px;font-weight:600;color:var(--sky);margin-bottom:4px}
+.exp-tag{font-family:var(--mono);font-size:9px;letter-spacing:.08em;color:var(--gold);margin-top:12px;line-height:1.5}
+.exp-role{font-family:var(--serif);font-size:24px;font-weight:400;color:var(--text-dark);margin-bottom:8px;line-height:1.2}
+.exp-desc{font-size:14px;line-height:1.75;color:var(--text-mid);margin-bottom:1rem}
+.exp-proof{display:flex;flex-wrap:wrap;gap:8px}
+.pill{font-family:var(--mono);font-size:10px;letter-spacing:.06em;color:var(--navy-mid);background:var(--cream-dark);padding:4px 12px;border-radius:2px}
+.pill.hi{background:rgba(74,138,181,.12);color:var(--sky)}
+
+/* STRENGTHS */
+.str-band{background:var(--navy-mid);padding:5rem 3rem}
+.str-inner{max-width:1100px;margin:0 auto}
+.str-label{font-family:var(--mono);font-size:9px;letter-spacing:.2em;color:var(--sky-light);text-transform:uppercase;margin-bottom:1rem;display:flex;align-items:center;gap:12px}
+.str-label::before{content:'';display:block;width:32px;height:1px;background:var(--sky-light);flex-shrink:0}
+.str-heading{font-family:var(--serif);font-size:clamp(32px,4vw,52px);font-weight:300;color:var(--white);line-height:1.1;margin-bottom:2rem}
+.str-heading em{font-style:italic;color:var(--sky-light)}
+.str-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(74,138,181,.15);border:1px solid rgba(74,138,181,.15)}
+.str-cell{background:var(--navy-mid);padding:1.75rem;transition:background .2s}
+.str-cell:hover{background:var(--navy-light)}
+.str-rank{font-family:var(--mono);font-size:9px;letter-spacing:.15em;color:var(--gold);margin-bottom:8px}
+.str-name{font-family:var(--serif);font-size:26px;font-weight:400;color:var(--white);margin-bottom:6px;line-height:1}
+.str-def{font-size:12px;line-height:1.6;color:rgba(200,223,240,.55);margin-bottom:1rem}
+.str-div{width:24px;height:1px;background:var(--gold);margin-bottom:1rem;opacity:.5}
+.str-apply{font-size:12px;line-height:1.6;color:var(--sky-light)}
+
+/* ACHIEVEMENTS */
+.ach-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.ach-card{background:var(--white);border:1px solid var(--cream-dark);border-radius:4px;padding:2rem;position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s}
+.ach-card:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(13,31,53,.08)}
+.ach-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--sky),var(--gold))}
+.ach-number{font-family:var(--serif);font-size:48px;font-weight:300;color:var(--navy);line-height:1;margin-bottom:8px}
+.ach-number sup{font-size:22px;vertical-align:super;color:var(--sky)}
+.ach-title{font-size:13px;font-weight:600;color:var(--text-dark);margin-bottom:8px;line-height:1.3}
+.ach-desc{font-size:12px;line-height:1.65;color:var(--text-mid)}
+
+/* FIT */
+.fit-band{background:linear-gradient(135deg,var(--navy) 0%,#0a1828 100%);padding:6rem 3rem;position:relative;overflow:hidden}
+.fit-band::before{content:'';position:absolute;right:-10%;top:-20%;width:60%;height:140%;background:radial-gradient(ellipse,rgba(74,138,181,.08) 0%,transparent 70%);pointer-events:none}
+.fit-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1}
+.fit-label{font-family:var(--mono);font-size:9px;letter-spacing:.2em;color:var(--gold);text-transform:uppercase;margin-bottom:1rem;display:flex;align-items:center;gap:12px}
+.fit-label::before{content:'';display:block;width:32px;height:1px;background:var(--gold);flex-shrink:0}
+.fit-heading{font-family:var(--serif);font-size:clamp(30px,4vw,52px);font-weight:300;color:var(--white);line-height:1.1;margin-bottom:3rem}
+.fit-heading em{font-style:italic;color:var(--sky-light)}
+.fit-points{display:flex;flex-direction:column;gap:1.5rem;margin-bottom:3rem}
+.fit-point{display:grid;grid-template-columns:2rem 1fr;gap:1rem;align-items:start}
+.fit-num{font-family:var(--mono);font-size:10px;color:var(--gold);padding-top:3px}
+.fit-text{font-size:15px;line-height:1.75;color:rgba(200,223,240,.8)}
+.fit-text strong{color:var(--sky-pale);font-weight:600}
+.fit-proof{background:rgba(255,255,255,.03);border:1px solid rgba(74,138,181,.25);border-left:3px solid var(--gold);border-radius:4px;padding:1.5rem 2rem}
+.fit-proof-lbl{font-family:var(--mono);font-size:9px;letter-spacing:.15em;color:var(--gold);text-transform:uppercase;margin-bottom:8px}
+.fit-proof-txt{font-size:14px;line-height:1.75;color:rgba(200,223,240,.75);font-style:italic}
+
+/* EDUCATION */
+.edu-row{display:flex;gap:1.5rem;flex-wrap:wrap}
+.edu-card{flex:1;min-width:200px;border-top:3px solid var(--sky);padding-top:1rem}
+.edu-degree{font-family:var(--serif);font-size:18px;font-weight:400;color:var(--text-dark);margin-bottom:4px;line-height:1.2}
+.edu-school{font-size:12px;color:var(--text-muted);margin-bottom:4px}
+.edu-honors{font-family:var(--mono);font-size:9px;letter-spacing:.1em;color:var(--gold);text-transform:uppercase}
+
+/* CHARACTER */
+.char-band{background:var(--cream-dark);padding:4rem 3rem}
+.char-inner{max-width:1100px;margin:0 auto;display:flex;gap:2rem;flex-wrap:wrap}
+.char-card{flex:1;min-width:220px;background:var(--white);border-radius:4px;padding:1.5rem;display:flex;flex-direction:column;gap:8px}
+.char-icon{font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--sky)}
+.char-title{font-family:var(--serif);font-size:22px;font-weight:400;color:var(--text-dark)}
+.char-desc{font-size:13px;line-height:1.6;color:var(--text-mid)}
+
+/* ASSET PORTFOLIO DEMO */
+.demo-band{background:var(--navy);padding:5rem 3rem}
+.demo-inner{max-width:1100px;margin:0 auto}
+.demo-label{font-family:var(--mono);font-size:9px;letter-spacing:.2em;color:var(--gold);text-transform:uppercase;margin-bottom:1rem;display:flex;align-items:center;gap:12px}
+.demo-label::before{content:'';display:block;width:32px;height:1px;background:var(--gold);flex-shrink:0}
+.demo-heading{font-family:var(--serif);font-size:clamp(28px,3.5vw,46px);font-weight:300;color:var(--white);line-height:1.15;margin-bottom:.75rem}
+.demo-heading em{font-style:italic;color:var(--sky-light)}
+.demo-sub{font-size:14px;color:rgba(200,223,240,.6);margin-bottom:2rem;max-width:560px;line-height:1.7}
+.portfolio-shell{background:rgba(255,255,255,.03);border:1px solid rgba(74,138,181,.2);border-radius:6px;padding:1.5rem}
+.port-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem;flex-wrap:wrap;gap:8px}
+.port-logo{display:flex;align-items:center;gap:10px}
+.port-mark{width:32px;height:32px;background:var(--navy-light);border-radius:4px;display:flex;align-items:center;justify-content:center}
+.port-mark svg{width:18px;height:18px}
+.port-name{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--sky-light);text-transform:uppercase}
+.port-live{font-family:var(--mono);font-size:10px;background:rgba(74,138,181,.15);color:var(--sky-light);padding:3px 10px;border-radius:99px}
+.port-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:1.25rem}
+.port-stat{background:rgba(255,255,255,.04);border-radius:4px;padding:.65rem .85rem}
+.port-stat-num{font-family:var(--serif);font-size:22px;font-weight:300;color:var(--white);line-height:1}
+.port-stat-lbl{font-family:var(--mono);font-size:9px;letter-spacing:.1em;color:var(--text-muted);text-transform:uppercase;margin-top:2px}
+.port-filters{display:flex;gap:6px;margin-bottom:1rem;flex-wrap:wrap}
+.pf-btn{font-family:var(--mono);font-size:11px;padding:4px 12px;border-radius:99px;border:1px solid rgba(74,138,181,.3);background:transparent;color:rgba(200,223,240,.6);cursor:pointer;transition:all .15s}
+.pf-btn.on{background:var(--sky);color:var(--white);border-color:var(--sky)}
+.port-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.port-card{background:rgba(255,255,255,.05);border:1px solid rgba(74,138,181,.15);border-radius:4px;padding:.9rem 1rem;transition:border-color .15s}
+.port-card:hover{border-color:rgba(74,138,181,.4)}
+.pc-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.5rem}
+.pc-id{font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:rgba(200,223,240,.4)}
+.pc-status{font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:99px}
+.st-av{background:rgba(74,138,181,.2);color:var(--sky-light)}
+.st-ol{background:rgba(201,168,76,.15);color:var(--gold)}
+.st-tr{background:rgba(200,223,240,.1);color:rgba(200,223,240,.6)}
+.st-lo{background:rgba(201,168,76,.1);color:var(--gold)}
+.pc-type{font-family:var(--serif);font-size:17px;font-weight:400;color:var(--white);margin-bottom:2px;line-height:1.2}
+.pc-msn{font-family:var(--mono);font-size:10px;color:rgba(200,223,240,.4);margin-bottom:.65rem}
+.pc-meta{display:grid;grid-template-columns:1fr 1fr;gap:4px 10px;margin-bottom:.65rem;padding-top:.6rem;border-top:1px solid rgba(74,138,181,.1)}
+.pc-mk{font-family:var(--mono);font-size:9px;color:rgba(200,223,240,.35);text-transform:uppercase;letter-spacing:.06em}
+.pc-mv{font-size:12px;color:rgba(200,223,240,.7);font-weight:500}
+.pc-footer{display:flex;justify-content:space-between;align-items:center;padding-top:.6rem;border-top:1px solid rgba(74,138,181,.1)}
+.pc-price{font-family:var(--serif);font-size:18px;font-weight:300;color:var(--white)}
+.pc-life{font-family:var(--mono);font-size:9px;padding:2px 7px;border-radius:2px}
+.lf-mid{background:rgba(74,138,181,.15);color:var(--sky-light)}
+.lf-end{background:rgba(201,168,76,.12);color:var(--gold)}
+.lf-grn{background:rgba(74,181,120,.12);color:#7bd4a0}
+.port-note{font-family:var(--mono);font-size:10px;color:rgba(200,223,240,.3);text-align:right;margin-top:1rem;letter-spacing:.05em}
+
+/* CTA */
+.cta-band{background:var(--navy-mid);padding:5rem 3rem;text-align:center}
+.cta-heading{font-family:var(--serif);font-size:clamp(28px,4vw,52px);font-weight:300;color:var(--white);line-height:1.2;margin-bottom:1rem}
+.cta-heading em{font-style:italic;color:var(--sky-light)}
+.cta-sub{font-size:15px;color:rgba(200,223,240,.6);margin-bottom:2.5rem;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.75}
+.cta-contacts{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;margin-bottom:2.5rem}
+.cta-item{display:flex;flex-direction:column;align-items:center;gap:4px}
+.cta-lbl{font-family:var(--mono);font-size:9px;letter-spacing:.15em;color:var(--text-muted);text-transform:uppercase}
+.cta-val{font-size:15px;color:var(--sky-pale)}
+.cta-divider{width:60px;height:1px;background:rgba(74,138,181,.3);margin:0 auto 2rem}
+.cta-footnote{font-family:var(--mono);font-size:9px;letter-spacing:.12em;color:rgba(74,138,181,.4);text-transform:uppercase}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+@media(max-width:768px){
+  .nav,.hero-content,.hero-footer{padding-left:1.5rem;padding-right:1.5rem}
+  .section,.case-band,.str-band,.fit-band,.char-band,.demo-band,.cta-band{padding:4rem 1.5rem}
+  .case-inner{grid-template-columns:1fr;gap:2.5rem}
+  .exp-item{grid-template-columns:1fr;gap:.75rem}
+  .str-grid,.ach-grid,.port-stats{grid-template-columns:1fr}
+  .hero-stats{gap:1.5rem}
+  .port-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <nav class="nav">
+    <div class="nav-logo">Geoffrey J. Buschur &nbsp;/&nbsp; Principal</div>
+    <div class="nav-badge">Prepared for GraySky Aviation</div>
+  </nav>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Principal &middot; Aviation &middot; 30+ Years</div>
+    <h1 class="hero-name">Geoffrey <em>J.</em><br>Buschur</h1>
+    <p class="hero-subtitle">Aviation Technical Advisor &middot; Asset Strategy &middot; Data Infrastructure</p>
+    <p class="hero-prop">
+      The rare specialist who can <strong>walk an aircraft</strong>, <strong>model a deal</strong>,
+      <strong>negotiate the lease</strong>, and <strong>build the data infrastructure</strong>
+      that tracks it all &mdash; with a verifiable, quantified track record of doing exactly that
+      at Delta Air Lines, Southwest Airlines, and AIMFleet across three decades.
+    </p>
+    <div class="hero-stats">
+      <div class="stat-item"><div class="stat-number">30<span>+</span></div><div class="stat-label">Years experience</div></div>
+      <div class="stat-item"><div class="stat-number">$400<span>M</span></div><div class="stat-label">Annual rev. increase</div></div>
+      <div class="stat-item"><div class="stat-number">90</div><div class="stat-label">Aircraft acquired</div></div>
+      <div class="stat-item"><div class="stat-number">3<span>&times;</span></div><div class="stat-label">Ironman finisher</div></div>
+    </div>
+  </div>
+  <div class="hero-footer">
+    <div class="hero-contact">
+      <div class="contact-item">gbuschur@gmail.com</div>
+      <div class="contact-item">(678) 571-6922</div>
+      <div class="contact-item">Soddy-Daisy, TN &nbsp;&middot;&nbsp; Remote Only</div>
+    </div>
+    <div class="scroll-cue">Scroll to explore</div>
+  </div>
+</section>
+
+<!-- THE CASE -->
+<div class="case-band">
+  <div class="case-inner reveal">
+    <div>
+      <h2 class="case-heading">Why <em>this</em> matters<br>for GraySky</h2>
+      <p class="case-body">GraySky has exceptional depth in finance, investor relations, and technical asset valuation. <strong>What you don't yet have</strong> is someone who spent three decades on the operator side &mdash; negotiating leases as the airline, turning wrenches as the maintainer, engineering the cabin, and managing fleet transitions at Delta Air Lines, Southwest Airlines, and AIMFleet.</p>
+      <p class="case-body">Geoffrey is the person an airline technical director trusts immediately &mdash; because he used to be that person. He can walk a GraySky asset, assess it with an A&amp;P eye, and frame it commercially for whichever airline or investor is across the negotiating table.</p>
+    </div>
+    <div class="gap-cards">
+      <div class="gap-card">
+        <div class="gap-card-title">Operator-side credibility</div>
+        <div class="gap-card-body">Deep airline-side relationships and institutional trust that pure lessor teams cannot replicate. He was the person lessors pitched to at Southwest.</div>
+      </div>
+      <div class="gap-card">
+        <div class="gap-card-title">Technical + commercial in one person</div>
+        <div class="gap-card-body">Active FAA A&amp;P certificate. Treasury-grade financial modeling. Most people are one or the other. Geoffrey is both &mdash; rare at any seniority level.</div>
+      </div>
+      <div class="gap-card">
+        <div class="gap-card-title">Data infrastructure ownership</div>
+        <div class="gap-card-body">Built a live Smartsheet-backed asset portfolio system for GraySky &mdash; filterable cards, portfolio metrics, investor-facing layout &mdash; before sending a single email.</div>
+      </div>
+      <div class="gap-card">
+        <div class="gap-card-title">Mid-to-end-of-life expertise</div>
+        <div class="gap-card-body">GraySky's core product. Geoffrey has managed aircraft at every life stage from new delivery through disposition &mdash; exactly the spectrum GraySky operates in.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- EXPERIENCE -->
+<section class="section reveal">
+  <div class="section-label">Career history</div>
+  <h2 class="section-heading">A career built on<br><em>measured impact</em></h2>
+  <div class="exp-list">
+
+    <div class="exp-item">
+      <div>
+        <div class="exp-dates">2021 &mdash; Present</div>
+        <div class="exp-co">AIMFleet</div>
+        <div class="exp-tag">Analytical &middot; Command</div>
+      </div>
+      <div>
+        <div class="exp-role">Fleet Technical Services</div>
+        <div class="exp-desc">Leads technical services for aircraft deliveries, transitions, and maintenance program reviews across multiple operators and lessors. Oversees on-site inspections, records reviews, and conformity verification for airworthiness and contractual compliance. Built project dashboards improving visibility and reducing delivery delays fleet-wide.</div>
+        <div class="exp-proof">
+          <span class="pill hi">Multi-operator scope</span>
+          <span class="pill hi">Multi-lessor</span>
+          <span class="pill">Airworthiness compliance</span>
+          <span class="pill">Project dashboards</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div>
+        <div class="exp-dates">2012 &mdash; 2020</div>
+        <div class="exp-co">Southwest Airlines</div>
+        <div class="exp-tag">Individualization &middot; Analytical</div>
+      </div>
+      <div>
+        <div class="exp-role">Fleet Transactions, Treasury</div>
+        <div class="exp-desc">Evaluated acquisition candidates and added 90 Boeing 737s to the Southwest fleet through data-driven assessment and negotiation. Commercial owner of the Boeing MAX configuration effort. Negotiated commercial lease terms with major lessors and advised Treasury on Boeing Purchase Agreement supplementals. Managed aircraft configuration with Boeing and negotiated Master Change and service bulletin packages for fleet-wide modifications.</div>
+        <div class="exp-proof">
+          <span class="pill hi">90 aircraft added</span>
+          <span class="pill hi">Boeing MAX owner</span>
+          <span class="pill">Major lessor negotiations</span>
+          <span class="pill">Master Change packages</span>
+          <span class="pill">Service bulletin negotiation</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div>
+        <div class="exp-dates">2006 &mdash; 2012</div>
+        <div class="exp-co">Southwest Airlines</div>
+        <div class="exp-tag">Intellection &middot; Learner</div>
+      </div>
+      <div>
+        <div class="exp-role">Engineering, Technical Operations</div>
+        <div class="exp-desc">Owned reliability, comfort, and configuration for 80,000 passenger seats and 4,500 crew seats across the entire Southwest fleet. Generated approximately $400M in annual incremental revenue by developing and implementing a six-seat increase in the aircraft cabin layout &mdash; a sustained, recurring impact, not a one-time event. Consolidated fleet from 10 configurations down to 2, dramatically improving training, maintenance planning, and parts commonality.</div>
+        <div class="exp-proof">
+          <span class="pill hi">~$400M annual rev. increase</span>
+          <span class="pill hi">President's Award 2012</span>
+          <span class="pill">10 configs &rarr; 2</span>
+          <span class="pill">80K seats managed</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div>
+        <div class="exp-dates">2002 &mdash; 2005</div>
+        <div class="exp-co">Delta Air Lines</div>
+        <div class="exp-tag">Analytical &middot; Input</div>
+      </div>
+      <div>
+        <div class="exp-role">Maintenance, Publications &amp; Programs</div>
+        <div class="exp-desc">Ensured accuracy and FAA compliance for all 767 technical manuals and maintenance program task cards. Coordinated across engineering groups, maintenance planning, and FAA representatives to maintain documentation integrity and support airworthiness initiatives.</div>
+        <div class="exp-proof">
+          <span class="pill">767 program</span>
+          <span class="pill">FAA compliance</span>
+          <span class="pill">Documentation integrity</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div>
+        <div class="exp-dates">1998 &mdash; 2002</div>
+        <div class="exp-co">Delta Air Lines</div>
+        <div class="exp-tag">Input &middot; Learner</div>
+      </div>
+      <div>
+        <div class="exp-role">Aviation Maintenance Technician</div>
+        <div class="exp-desc">Performed heavy maintenance, line maintenance, and downline emergency repair across multiple fleet types. FAA Airframe &amp; Powerplant certified. The hands-on technical foundation &mdash; begun at Vincennes in 1995 &mdash; that gives Geoffrey technical credibility no purely finance- or lessor-side background can replicate. He has turned wrenches on the aircraft he now evaluates and advises on.</div>
+        <div class="exp-proof">
+          <span class="pill hi">Heavy maintenance</span>
+          <span class="pill hi">Line maintenance</span>
+          <span class="pill hi">Emergency downline repair</span>
+          <span class="pill">FAA A&amp;P certified</span>
+          <span class="pill">Multiple fleet types</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- STRENGTHS -->
+<div class="str-band">
+  <div class="str-inner reveal">
+    <div class="str-label">Gallup CliftonStrengths</div>
+    <h2 class="str-heading">How Geoffrey <em>thinks</em><br>and operates</h2>
+    <div class="str-grid">
+      <div class="str-cell">
+        <div class="str-rank">No. 1 Strength</div>
+        <div class="str-name">Analytical</div>
+        <div class="str-def">Searches for the reason and cause. Thinks in data, not assumptions. Resistant to claims without proof.</div>
+        <div class="str-div"></div>
+        <div class="str-apply">Asset underwriting, portfolio valuation, deal structuring &mdash; every decision grounded in evidence.</div>
+      </div>
+      <div class="str-cell">
+        <div class="str-rank">No. 2 Strength</div>
+        <div class="str-name">Individualization</div>
+        <div class="str-def">Intuitively reads what each person uniquely needs. Tailors every approach to the individual.</div>
+        <div class="str-div"></div>
+        <div class="str-apply">No two lease negotiations were alike. Reads airlines and investors with precision &mdash; and closes accordingly.</div>
+      </div>
+      <div class="str-cell">
+        <div class="str-rank">No. 3 Strength</div>
+        <div class="str-name">Learner</div>
+        <div class="str-def">Energized by acquiring new expertise. Thrives in domains with steep learning curves.</div>
+        <div class="str-div"></div>
+        <div class="str-apply">AMT &rarr; Engineering &rarr; Treasury &rarr; Principal. He will own GraySky's systems and processes fast.</div>
+      </div>
+      <div class="str-cell">
+        <div class="str-rank">No. 4 Strength</div>
+        <div class="str-name">Input</div>
+        <div class="str-def">Compulsive collector of information. Builds deep knowledge banks across adjacent domains.</div>
+        <div class="str-div"></div>
+        <div class="str-apply">Deep across operators, lessors, OEMs, MROs, and regulatory frameworks &mdash; the intelligence engine behind every recommendation.</div>
+      </div>
+      <div class="str-cell">
+        <div class="str-rank">No. 5 Strength</div>
+        <div class="str-name">Intellection</div>
+        <div class="str-def">Introspective thinker who produces well-considered, carefully reasoned decisions.</div>
+        <div class="str-div"></div>
+        <div class="str-apply">Fleet consolidation from 10 configs to 2 at Southwest. Long-horizon strategic thinking in every move.</div>
+      </div>
+      <div class="str-cell">
+        <div class="str-rank">No. 8 Strength</div>
+        <div class="str-name">Command</div>
+        <div class="str-def">Takes charge. Has presence. Confronts obstacles and drives situations to resolution.</div>
+        <div class="str-div"></div>
+        <div class="str-apply">Keeps engagements moving, stakeholders aligned, and decisions made. Recognized with Southwest's President's Award.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ACHIEVEMENTS -->
+<section class="section reveal">
+  <div class="section-label">Signature achievements</div>
+  <h2 class="section-heading">The numbers that<br><em>define the record</em></h2>
+  <div class="ach-grid">
+    <div class="ach-card">
+      <div class="ach-number">$400<sup>M</sup></div>
+      <div class="ach-title">Annual incremental revenue increase</div>
+      <div class="ach-desc">Developed and implemented a 6-seat cabin increase across Southwest's entire 737 fleet. This was a sustained annual revenue increase &mdash; not a one-time event &mdash; recurring every year across every aircraft in the fleet.</div>
+    </div>
+    <div class="ach-card">
+      <div class="ach-number">90</div>
+      <div class="ach-title">Aircraft acquired for Southwest</div>
+      <div class="ach-desc">Data-driven evaluation and lessor negotiation of 90 Boeing 737s. Treasury-level economics, major counterparty relationships, and the instinct to know which deal to walk away from.</div>
+    </div>
+    <div class="ach-card">
+      <div class="ach-number">10&rarr;2</div>
+      <div class="ach-title">Fleet configurations consolidated</div>
+      <div class="ach-desc">Reduced Southwest's cabin configs from 10 to 2 &mdash; improving training, maintenance planning, parts commonality, and operational simplicity across hundreds of aircraft.</div>
+    </div>
+    <div class="ach-card">
+      <div class="ach-number">&#9733;</div>
+      <div class="ach-title">President's Award, Southwest Engineering</div>
+      <div class="ach-desc">Recognized for driving innovation and organizational change. Peer and leadership validated. The kind of impact that gets named, not just noted on a review.</div>
+    </div>
+    <div class="ach-card">
+      <div class="ach-number">3<sup>&times;</sup></div>
+      <div class="ach-title">Ironman triathlete</div>
+      <div class="ach-desc">140.6 miles &mdash; swim, bike, run &mdash; completed three times. The same discipline and finish-line mentality that define every professional engagement.</div>
+    </div>
+    <div class="ach-card">
+      <div class="ach-number">MAX</div>
+      <div class="ach-title">Boeing MAX configuration owner</div>
+      <div class="ach-desc">Commercial owner of Southwest's MAX configuration effort &mdash; translating operational requirements into contractual deliverables with Boeing, including Master Change and service bulletin package negotiations.</div>
+    </div>
+  </div>
+</section>
+
+<!-- GRAYSKY FIT -->
+<div class="fit-band">
+  <div class="fit-inner reveal">
+    <div class="fit-label">The case</div>
+    <h2 class="fit-heading">Why Geoffrey is the<br><em>missing piece</em> at GraySky</h2>
+    <div class="fit-points">
+      <div class="fit-point">
+        <div class="fit-num">01</div>
+        <div class="fit-text">GraySky's team has outstanding depth in <strong>finance, investor relations, and technical valuation</strong>. What is missing is someone who negotiated leases as the airline, turned wrenches as the maintainer, and managed fleet transitions across <strong>Delta Air Lines, Southwest Airlines, and AIMFleet</strong> over three decades. Geoffrey is that person.</div>
+      </div>
+      <div class="fit-point">
+        <div class="fit-num">02</div>
+        <div class="fit-text">He holds an <strong>active FAA Airframe &amp; Powerplant certificate</strong> earned through years of heavy maintenance, line maintenance, and emergency repair at Delta. He can walk a mid-life aircraft, open a logbook, and know immediately what he is looking at &mdash; then frame it commercially for whichever airline or investor is across the table.</div>
+      </div>
+      <div class="fit-point">
+        <div class="fit-num">03</div>
+        <div class="fit-text">His <strong>Individualization strength</strong> means he reads what each airline or investor counterpart specifically needs and adjusts accordingly &mdash; the relational intelligence that turns introductions into deals.</div>
+      </div>
+      <div class="fit-point">
+        <div class="fit-num">04</div>
+        <div class="fit-text">He built a <strong>live Smartsheet-backed asset portfolio marketing system</strong> for GraySky &mdash; with filterable asset cards, portfolio metrics, and investor-facing layout &mdash; before sending a single email. That is not a pitch. That is a demonstration. See it below.</div>
+      </div>
+    </div>
+    <div class="fit-proof">
+      <div class="fit-proof-lbl">The proof of concept</div>
+      <div class="fit-proof-txt">The interactive asset portfolio below was built in a single working session using Geoffrey's Smartsheet skills and technical tooling &mdash; unprompted, targeted specifically at GraySky's business model, and live-connected to real data. This is what he brings to every engagement from day one.</div>
+    </div>
+  </div>
+</div>
+
+<!-- EDUCATION -->
+<section class="section reveal">
+  <div class="section-label">Education &amp; credentials</div>
+  <h2 class="section-heading">The foundation<br><em>behind the results</em></h2>
+  <div class="edu-row">
+    <div class="edu-card">
+      <div class="edu-degree">B.S. Professional Aeronautics</div>
+      <div class="edu-school">Embry-Riddle Aeronautical University</div>
+      <div class="edu-honors">Summa Cum Laude &middot; Safety &amp; Management</div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-degree">A.S. Aviation Maintenance Technology</div>
+      <div class="edu-school">Vincennes University &middot; Est. 1995</div>
+      <div class="edu-honors">Cum Laude &middot; Where it all began</div>
+    </div>
+    <div class="edu-card" style="border-top-color:var(--gold)">
+      <div class="edu-degree">FAA Airframe &amp; Powerplant</div>
+      <div class="edu-school">Active Certificate</div>
+      <div class="edu-honors" style="color:var(--gold)">Hands-on technical authority</div>
+    </div>
+  </div>
+</section>
+
+<!-- CHARACTER -->
+<div class="char-band">
+  <div class="char-inner reveal">
+    <div class="char-card">
+      <div class="char-icon">&mdash; Ironman</div>
+      <div class="char-title">Three-Time Finisher</div>
+      <div class="char-desc">140.6 miles of swimming, cycling, and running &mdash; three times. The discipline that gets you across the line at mile 140 is the same discipline Geoffrey brings to every project, negotiation, and deliverable.</div>
+    </div>
+    <div class="char-card">
+      <div class="char-icon">&mdash; Board</div>
+      <div class="char-title">Charitable Board Member</div>
+      <div class="char-desc">Serves as board member for a 501(c) charitable organization, carrying fiduciary responsibility and strategic leadership outside the office.</div>
+    </div>
+    <div class="char-card">
+      <div class="char-icon">&mdash; Philosophy</div>
+      <div class="char-title">Demonstrates, Doesn't Pitch</div>
+      <div class="char-desc">Geoffrey's approach is consistent: show the work before asking for anything. The asset portfolio below was built before this profile was shared. That is a values statement, not a tactic.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ASSET PORTFOLIO DEMO -->
+<div class="demo-band">
+  <div class="demo-inner reveal">
+    <div class="demo-label">Live demonstration</div>
+    <h2 class="demo-heading">GraySky asset portfolio<br><em>built before the first email</em></h2>
+    <p class="demo-sub">This is the Smartsheet-backed asset marketing system Geoffrey built specifically for GraySky &mdash; filterable, data-driven, investor and airline ready. This is what day one looks like.</p>
+
+    <div class="portfolio-shell">
+      <div class="port-header">
+        <div class="port-logo">
+          <div class="port-mark">
+            <svg viewBox="0 0 20 20" fill="none"><path d="M3 15L10 4L17 15" stroke="#7bb3d4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 11L14 11" stroke="#7bb3d4" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="port-name">GraySky Aviation &nbsp;&middot;&nbsp; Asset Portfolio</div>
+        </div>
+        <span class="port-live">&#9679; Smartsheet connected</span>
+      </div>
+
+      <div class="port-stats" id="portStats"></div>
+
+      <div class="port-filters">
+        <button class="pf-btn on" onclick="filterAssets('all',this)">All assets</button>
+        <button class="pf-btn" onclick="filterAssets('Available',this)">Available</button>
+        <button class="pf-btn" onclick="filterAssets('On Lease',this)">On lease</button>
+        <button class="pf-btn" onclick="filterAssets('In Transition',this)">In transition</button>
+        <button class="pf-btn" onclick="filterAssets('Under LOI',this)">Under LOI</button>
+      </div>
+
+      <div class="port-grid" id="portGrid"></div>
+      <div class="port-note" id="portNote"></div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-band">
+  <h2 class="cta-heading">Ready to talk <em>aviation</em>.</h2>
+  <p class="cta-sub">Geoffrey engages on a fractional, advisory, or project basis &mdash; bringing operator-side credibility, technical authority, and data-driven execution with clear scope and mutual respect for timeline. Remote only.</p>
+  <div class="cta-divider"></div>
+  <div class="cta-contacts">
+    <div class="cta-item"><div class="cta-lbl">Email</div><div class="cta-val">gbuschur@gmail.com</div></div>
+    <div class="cta-item"><div class="cta-lbl">Phone</div><div class="cta-val">(678) 571-6922</div></div>
+    <div class="cta-item"><div class="cta-lbl">Location</div><div class="cta-val">Soddy-Daisy, TN &middot; Remote Only</div></div>
+  </div>
+  <div class="cta-footnote">Prepared exclusively for GraySky Aviation &middot; March 2026</div>
+</div>
+
+<script>
+const ASSETS=[
+  {id:"GS-001",type:"Boeing 737-800",msn:"35821",year:"2009",engine:"CFM56-7B27",status:"Available",lessee:"",leaseExp:"",location:"Dallas, TX",fh:"42,800",fc:"28,400",nextC:"Mar 2027",engHrs:"4,200",price:"$8,500,000",lease:"$265,000/mo",life:"Mid-Life",notes:"Strong LCC candidate; fresh C-check runway",updated:"Mar 20, 2025"},
+  {id:"GS-002",type:"Airbus A320-200",msn:"4471",year:"2006",engine:"CFM56-5B4",status:"In Transition",lessee:"Viva Aerobus",leaseExp:"Apr 2025",location:"Mexico City, MX",fh:"68,100",fc:"44,200",nextC:"Aug 2025",engHrs:"1,800",price:"$4,200,000",lease:"$185,000/mo",life:"End-of-Life",notes:"Parting out candidate; engines have residual value",updated:"Mar 18, 2025"},
+  {id:"GS-003",type:"Boeing 737-700",msn:"29118",year:"2004",engine:"CFM56-7B24",status:"On Lease",lessee:"Southwest Airlines",leaseExp:"Jan 2026",location:"Dallas, TX",fh:"71,400",fc:"50,100",nextC:"Nov 2024",engHrs:"900",price:"$3,800,000",lease:"$155,000/mo",life:"End-of-Life",notes:"Remarketing begins Q3 2025",updated:"Mar 15, 2025"},
+  {id:"GS-004",type:"CFM56-7B27 Engine",msn:"E-894421",year:"2008",engine:"CFM56-7B27",status:"Available",lessee:"",leaseExp:"",location:"Miami, FL",fh:"14,200",fc:"9,800",nextC:"Jan 2028",engHrs:"8,600",price:"$3,100,000",lease:"&mdash;",life:"Green Time",notes:"Ideal for AOG coverage or short-term lease",updated:"Mar 21, 2025"},
+  {id:"GS-005",type:"Airbus A321-200",msn:"6203",year:"2014",engine:"CFM56-5B3",status:"Under LOI",lessee:"Undisclosed",leaseExp:"&mdash;",location:"Dublin, IE",fh:"28,600",fc:"19,200",nextC:"Jun 2026",engHrs:"7,200",price:"$14,500,000",lease:"$340,000/mo",life:"Mid-Life",notes:"LOI signed; due diligence in progress",updated:"Mar 22, 2025"}
+];
+
+let activeFilter='all';
+
+function statusClass(s){return{Available:'st-av','On Lease':'st-ol','In Transition':'st-tr','Under LOI':'st-lo'}[s]||'st-tr'}
+function lifeClass(l){return{'Mid-Life':'lf-mid','End-of-Life':'lf-end','Green Time':'lf-grn'}[l]||'lf-mid'}
+
+function renderStats(){
+  const av=ASSETS.filter(a=>a.status==='Available').length;
+  const tv=ASSETS.reduce((s,a)=>{const n=parseFloat(a.price.replace(/[$,]/g,''));return s+(isNaN(n)?0:n);},0);
+  document.getElementById('portStats').innerHTML=`
+    <div class="port-stat"><div class="port-stat-num">${ASSETS.length}</div><div class="port-stat-lbl">Total assets</div></div>
+    <div class="port-stat"><div class="port-stat-num">${av}</div><div class="port-stat-lbl">Available now</div></div>
+    <div class="port-stat"><div class="port-stat-num">$${(tv/1e6).toFixed(1)}M</div><div class="port-stat-lbl">Portfolio value</div></div>
+    <div class="port-stat"><div class="port-stat-num">4</div><div class="port-stat-lbl">Target regions</div></div>`;
+}
+
+function filterAssets(f,el){
+  activeFilter=f;
+  document.querySelectorAll('.pf-btn').forEach(b=>b.classList.remove('on'));
+  el.classList.add('on');
+  renderGrid();
+}
+
+function renderGrid(){
+  const list=activeFilter==='all'?ASSETS:ASSETS.filter(a=>a.status===activeFilter);
+  document.getElementById('portGrid').innerHTML=list.map(a=>`
+    <div class="port-card">
+      <div class="pc-top"><span class="pc-id">${a.id} &middot; ${a.year}</span><span class="pc-status ${statusClass(a.status)}">${a.status}</span></div>
+      <div class="pc-type">${a.type}</div>
+      <div class="pc-msn">MSN ${a.msn} &middot; ${a.engine} &middot; ${a.location}</div>
+      <div class="pc-meta">
+        <div><div class="pc-mk">Flight hrs</div><div class="pc-mv">${a.fh}</div></div>
+        <div><div class="pc-mk">Cycles</div><div class="pc-mv">${a.fc}</div></div>
+        <div><div class="pc-mk">Next C-check</div><div class="pc-mv">${a.nextC}</div></div>
+        <div><div class="pc-mk">Eng hrs rem.</div><div class="pc-mv">${a.engHrs}</div></div>
+        ${a.lessee?`<div><div class="pc-mk">Lessee</div><div class="pc-mv">${a.lessee}</div></div>`:''}
+        ${a.leaseExp&&a.leaseExp!=='&mdash;'?`<div><div class="pc-mk">Lease expiry</div><div class="pc-mv">${a.leaseExp}</div></div>`:''}
+      </div>
+      <div class="pc-footer"><div class="pc-price">${a.price}</div><span class="pc-life ${lifeClass(a.life)}">${a.life}</span></div>
+    </div>`).join('');
+  const latest=list.reduce((m,a)=>a.updated>m?a.updated:m,'');
+  document.getElementById('portNote').textContent=`Sourced from Smartsheet \u00b7 Last updated ${latest}`;
+}
+
+renderStats();
+renderGrid();
+
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});
+},{threshold:0.1,rootMargin:'0px 0px -60px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
